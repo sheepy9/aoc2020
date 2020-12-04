@@ -1,31 +1,27 @@
 import re
 
 def checkbyr(val):
-    #print("checking byr")
-    if type(re.search("^[0-9][0-9][0-9][0-9]$",val)) == type(None):
+    if type(re.search("^[0-9]{4}$",val)) == type(None):
         return False
-    if int(val)<1920 or int(val) > 2002:
+    if int(val) < 1920 or int(val) > 2002:
         return False
     return True
 
 def checkiyr(val):
-    #print("checking iyr")
-    if type(re.search("^[0-9][0-9][0-9][0-9]$",val)) == type(None):
+    if type(re.search("^[0-9]{4}$",val)) == type(None):
         return False
     if int(val)<2010 or int(val) > 2020:
         return False
     return True
 
 def checkeyr(val):
-    #print("checking eyr")
-    if type(re.search("^[0-9][0-9][0-9][0-9]$",val)) == type(None):
+    if type(re.search("^[0-9]{4}$",val)) == type(None):
         return False
-    if int(val)<2020 or int(val) > 2030:
+    if int(val) < 2020 or int(val) > 2030:
         return False
     return True
 
 def checkhgt(val):
-    #print("checking hgt")
     if type(re.search("^[0-9]+cm",val)) == type(None) and \
         type(re.search("^[0-9]+in",val)) == type(None):
         return False
@@ -39,29 +35,22 @@ def checkhgt(val):
         hgt = int(val.split("in")[0])
         if hgt < 59 or hgt > 76:
             return False
-
     return True
 
 def checkhcl(val):
-    #print("checking hcl")
-    if type(re.search("^#[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]$",val)) == type(None):
+    if type(re.search("^#[0-9a-f]{6}$",val)) == type(None):
         return False
-
     return True
 
 def checkecl(val):
-    #print("checking ecl")
     colorSet = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"}
     if not val in colorSet:
         return False
-
     return True
 
 def checkpid(val):
-    #print("checking pid")
-    if type(re.search("^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$",val)) == type(None):
+    if type(re.search("^[0-9]{9}$",val)) == type(None):
         return False
-
     return True
 
 def checkcid(val):
