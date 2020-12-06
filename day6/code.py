@@ -4,10 +4,7 @@ f = open("answers")
 groups = f.read().split("\n\n")
 
 # part one
-total = 0
-for group in groups:
-    answers = group.replace("\n","")
-    total = total + len(set(answers))
+total = sum([len(set(group.replace("\n",""))) for group in groups])
 print(total)
 
 # part two

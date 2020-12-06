@@ -30,8 +30,6 @@ for seat in seats:
 seatIds.sort()
 for index in range(1, len(seatIds)-1):
     if seatIds[index]-seatIds[index-1] > 1:
-        print(seatIds[index-1])
-        print(seatIds[index])
         print(seatIds[index]-1)
 print(maxId)
         
