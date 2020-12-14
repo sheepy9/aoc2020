@@ -29,6 +29,4 @@ while (not (numpy.array_equal(seatMatrix, seatMatrixNew))) or firstRun:
     firstRun = False
 
 takenSeats = sum(seatMatrixNew[(seatMatrixNew==1)])
-print(seatMatrixNew)
-
-# part two
+print(takenSeats)
